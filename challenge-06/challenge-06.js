@@ -34,8 +34,8 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition(index){
-    if(index > 5){
-        return 'O time que está em' + index + 1 +'º lugar é o' + teams[index-1] + '.';
+    if(index < 5 && index > 0){
+        return 'O time que está em ' + index +'º lugar é o ' + teams[index-1] + '.';
     }else{
         return 'Não temos a informação do time que está nessa posição.';
     }
@@ -49,7 +49,7 @@ console.log(showTeamPosition(1));
 console.log(showTeamPosition(2));
 console.log(showTeamPosition(3));
 console.log(showTeamPosition(4));
-teams += ['Atletico-MG'];
+console.log(showTeamPosition(6));
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
@@ -57,8 +57,7 @@ repetição "while".
 */
 var cont = 20;
 while(cont <= 30){
-    console.log(cont);
-    cont++;
+    console.log(cont++);
 }
 
 /*
@@ -74,22 +73,27 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(color){
+    var hexa;
     switch(color){
         case 'red':
-            return 'O hexadecimal para a cor' + color + ' é RRRR.';
+            hexa = '#RRRR';
             break;
         case 'blue':    
-            return 'O hexadecimal para a cor' + color + ' é BBBB.';
+            hexa = '#BBBB';
             break;
         case 'yellow':
-            return 'O hexadecimal para a cor' + color + ' é YYYY.'; 
+            hexa = '#YYYY'; 
+            break;
         case 'white':
-            return 'O hexadecimal para a cor' + color + ' é 0000.';    
+            hexa = '#WWWW';
+            break;   
         case 'black':
-            return 'O hexadecimal para a cor' + color + ' é FFFF.';     
+            hexa = '#BBBB';  
+            break;  
         default:
             return 'Não temos o equivalente hexadecimal para ' + color + '.';
     }
+    return 'O hexadecimal para a cor' + color + ' é '+ hexa + '.';
 }
 
 /*
